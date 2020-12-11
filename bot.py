@@ -14,8 +14,8 @@ async def on_ready():
             display_text = f'Top GitHub repo for today is **{top_repo.name}** by **{top_repo.author}**.' \
                 f'\nLink: {top_repo.url}'
             message = await channel.send(display_text)
-            await message.add_reaction('💻')
-            await client.close()
-            await client.close()
+            guild_emoji = discord.utils.get(guild.emojis, name='EZ_pepe')
+            await message.add_reaction(guild_emoji)
+    await client.close()
 
 client.run(os.environ['TOKEN'])
